@@ -1,0 +1,13 @@
+C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.GW2APIJSONDomain\bin\Debug\GW2OIC.GW2APIJSONDomain.dll.config
+C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.GW2APIJSONDomain\bin\Debug\GW2OIC.GW2APIJSONDomain.dll
+C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.GW2APIJSONDomain\bin\Debug\GW2OIC.GW2APIJSONDomain.pdb
+C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.GW2APIJSONDomain\bin\Debug\EntityFramework.dll
+C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.GW2APIJSONDomain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.GW2APIJSONDomain\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.GW2APIJSONDomain\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.GW2APIJSONDomain\bin\Debug\EntityFramework.xml
+C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.GW2APIJSONDomain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.GW2APIJSONDomain\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.GW2APIJSONDomain\obj\Debug\GW2OIC.GW2APIJSONDomain.csprojResolveAssemblyReference.cache
+C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.GW2APIJSONDomain\obj\Debug\GW2OIC.GW2APIJSONDomain.dll
+C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.GW2APIJSONDomain\obj\Debug\GW2OIC.GW2APIJSONDomain.pdb

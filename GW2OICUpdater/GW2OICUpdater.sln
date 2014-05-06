@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GW2OICUpdater", "GW2OICUpdater\GW2OICUpdater.csproj", "{B7AAC005-75A5-4281-A25D-5D3BE49D776B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GW2OIC.GW2APIJSONDomain", "GW2OIC.GW2APIJSONDomain\GW2OIC.GW2APIJSONDomain.csproj", "{AE21BE05-3D6B-4340-9156-75E2B3699838}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GW2OIC.MVC", "GW2OIC.MVC\GW2OIC.MVC.csproj", "{88AE75E1-245B-428A-90D8-87161D43B121}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B7AAC005-75A5-4281-A25D-5D3BE49D776B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7AAC005-75A5-4281-A25D-5D3BE49D776B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7AAC005-75A5-4281-A25D-5D3BE49D776B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7AAC005-75A5-4281-A25D-5D3BE49D776B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AE21BE05-3D6B-4340-9156-75E2B3699838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AE21BE05-3D6B-4340-9156-75E2B3699838}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE21BE05-3D6B-4340-9156-75E2B3699838}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE21BE05-3D6B-4340-9156-75E2B3699838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88AE75E1-245B-428A-90D8-87161D43B121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88AE75E1-245B-428A-90D8-87161D43B121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88AE75E1-245B-428A-90D8-87161D43B121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88AE75E1-245B-428A-90D8-87161D43B121}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

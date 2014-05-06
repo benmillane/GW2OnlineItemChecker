@@ -62,6 +62,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GW2OIC.GW2APIJSONDomain\GW2OIC.GW2APIJSONDomain.csproj">
+      <Project>{ae21be05-3d6b-4340-9156-75e2b3699838}</Project>
+      <Name>GW2OIC.GW2APIJSONDomain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
