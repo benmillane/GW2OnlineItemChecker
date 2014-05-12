@@ -26,7 +26,7 @@ namespace GW2OIC.GW2APIJSONDomain
         public int default_skin { get; private set; }
         public string[] game_types { get; private set; }
         public string[] flags { get; private set; }
-        public string[] resitrictions { get; private set; }
+        public string[] restrictions { get; private set; }
 
         async public Task<GW2Item> Create(int id)
         {
@@ -60,7 +60,7 @@ namespace GW2OIC.GW2APIJSONDomain
             this.level = item.level;
             this.name = item.name;
             this.rarity = item.rarity;
-            this.resitrictions = item.resitrictions;
+            this.restrictions = item.restrictions;
             this.type = item.type;
             this.vendor_value = item.vendor_value;
         }
