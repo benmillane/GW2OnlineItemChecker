@@ -110,12 +110,14 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\JSON\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JSONController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -149,7 +151,16 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\GW2OIC.BLL\GW2OIC.BLL.csproj">
+      <Project>{2ed734b9-797a-47b6-b9f3-bb778812c3ec}</Project>
+      <Name>GW2OIC.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GW2OIC.GW2APIJSONDomain\GW2OIC.GW2APIJSONDomain.csproj">
+      <Project>{ae21be05-3d6b-4340-9156-75e2b3699838}</Project>
+      <Name>GW2OIC.GW2APIJSONDomain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

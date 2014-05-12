@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GW2OIC.GW2APIJSONDomain", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GW2OIC.MVC", "GW2OIC.MVC\GW2OIC.MVC.csproj", "{88AE75E1-245B-428A-90D8-87161D43B121}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GW2OIC.BLL", "GW2OIC.BLL\GW2OIC.BLL.csproj", "{2ED734B9-797A-47B6-B9F3-BB778812C3EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{88AE75E1-245B-428A-90D8-87161D43B121}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88AE75E1-245B-428A-90D8-87161D43B121}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88AE75E1-245B-428A-90D8-87161D43B121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ED734B9-797A-47B6-B9F3-BB778812C3EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ED734B9-797A-47B6-B9F3-BB778812C3EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ED734B9-797A-47B6-B9F3-BB778812C3EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ED734B9-797A-47B6-B9F3-BB778812C3EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
