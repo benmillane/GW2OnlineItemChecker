@@ -8,8 +8,12 @@ using GW2OIC.GW2APIJSONDomain;
 
 namespace GW2OIC.BLL
 {
-    public class GW2ObtainJSONItem
+    /// <summary>
+    /// Class used to call all API calling code and return an object for each type of API response.
+    /// </summary>
+    public class GW2ObtainAPIJSON
     {
+        //Gets an item from the GW2 based on its id.
         async public Task<GW2Item> GetItem(int id)
         {
             GW2Item item = new GW2Item();

@@ -15,7 +15,7 @@ namespace GW2OIC.MVC.Controllers
         // GET: /JSON/
         async public Task<JsonResult> GetItem(int id)
         {
-            GW2ObtainJSONItem obtain = new GW2ObtainJSONItem();
+            GW2ObtainAPIJSON obtain = new GW2ObtainAPIJSON();
             GW2Item item = await obtain.GetItem(id);
             return Json(item, JsonRequestBehavior.AllowGet);
         }

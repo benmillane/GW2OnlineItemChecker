@@ -9,26 +9,32 @@ using System.Net;
 
 namespace GW2OIC.GW2APIJSONDomain
 {
+
     public class GW2Item
     {
+        //Used to hold an internally accessible object with the same properties as GW2Item but with full read/write access within this class.
+        private GW2ItemPrivate item;
 
-        private GW2Item item;
+        //Item properties can have values set through CreateItem to prevent creation of objects not from the API.
+        public int item_id { get; private set; }
+        public string name { get; private set; }
+        public string description { get; private set; }
+        public string type { get; private set; }
+        public int level { get; private set; }
+        public string rarity { get; private set; }
+        public int vendor_value { get; private set; }
+        public int icon_file_id { get; private set; }
+        public string icon_file_signature { get; private set; }
+        public int default_skin { get; private set; }
+        public string[] game_types { get; private set; }
+        public string[] flags { get; private set; }
+        public string[] restrictions { get; private set; }
 
-        //Item properties are read only
-        public int item_id { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
-        public string type { get; set; }
-        public int level { get; set; }
-        public string rarity { get; set; }
-        public int vendor_value { get; set; }
-        public int icon_file_id { get; set; }
-        public string icon_file_signature { get; set; }
-        public int default_skin { get; set; }
-        public string[] game_types { get; set; }
-        public string[] flags { get; set; }
-        public string[] restrictions { get; set; }
-
+        /// <summary>
+        /// Obtains JSON from the GW2 API and deserializes it into a GW2ItemPrivate Object for CreateItem to use
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         async private Task GetItem(int id)
         {
             using (HttpClient client = new HttpClient())
@@ -38,11 +44,12 @@ namespace GW2OIC.GW2APIJSONDomain
 
                 //Serialize the JSON response into a GW2Item object
                 JavaScriptSerializer jss = new JavaScriptSerializer();
-                this.item = jss.Deserialize<GW2Item>(GW2APIJSON);
+                this.item = jss.Deserialize<GW2ItemPrivate>(GW2APIJSON);
             }
 
         }
 
+        //Calls GetItem to access API and then replicates the values into this object's properties.
         async public Task CreateItem(int id)
         {
             await this.GetItem(id);
@@ -58,7 +65,27 @@ namespace GW2OIC.GW2APIJSONDomain
             this.game_types = item.game_types;
             this.flags = item.flags;
             this.restrictions = item.restrictions;
-        } 
+        }
+
+        /// <summary>
+        /// Used internally to hold values to be placed into the GW2Item properties.
+        /// </summary>
+        private class GW2ItemPrivate
+        {
+            public int item_id { get; set; }
+            public string name { get; set; }
+            public string description { get; set; }
+            public string type { get; set; }
+            public int level { get; set; }
+            public string rarity { get; set; }
+            public int vendor_value { get; set; }
+            public int icon_file_id { get; set; }
+            public string icon_file_signature { get; set; }
+            public int default_skin { get; set; }
+            public string[] game_types { get; set; }
+            public string[] flags { get; set; }
+            public string[] restrictions { get; set; }
+        }
 
     }
 
