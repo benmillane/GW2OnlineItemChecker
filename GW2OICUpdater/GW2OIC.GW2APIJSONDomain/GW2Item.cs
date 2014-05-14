@@ -15,7 +15,7 @@ namespace GW2OIC.GW2APIJSONDomain
         //Used to hold an internally accessible object with the same properties as GW2Item but with full read/write access within this class.
         private GW2ItemPrivate item;
 
-        //Item properties can have values set through CreateItem to prevent creation of objects not from the API.
+        //Item properties can ONLY have values set through CreateItem to prevent creation of objects not from the API.
         public int item_id { get; private set; }
         public string name { get; private set; }
         public string description { get; private set; }
