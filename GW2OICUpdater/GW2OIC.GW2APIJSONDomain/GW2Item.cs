@@ -74,6 +74,7 @@ namespace GW2OIC.GW2APIJSONDomain
             this.rarity = item.rarity;
             this.vendor_value = item.vendor_value;
             this.icon_file_id = item.icon_file_id;
+            this.icon_file_signature = item.icon_file_signature;
             this.default_skin = item.default_skin;
             this.game_types = item.game_types;
             this.flags = item.flags;
