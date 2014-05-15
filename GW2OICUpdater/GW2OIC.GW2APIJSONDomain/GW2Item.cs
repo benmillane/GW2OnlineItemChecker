@@ -12,6 +12,9 @@ namespace GW2OIC.GW2APIJSONDomain
 
     public class GW2Item
     {
+        //Holds the JSON response from the API call whe GetItem is called. Can be deserialized multiple times without additional API calls.
+        private string GW2APIJSON ;
+
         //Used to hold an internally accessible object with the same properties as GW2Item but with full read/write access within this class.
         private GW2ItemPrivate item;
 
@@ -40,7 +43,7 @@ namespace GW2OIC.GW2APIJSONDomain
             using (HttpClient client = new HttpClient())
             {
                 //Obtain JSON response from GW2 API.
-                string GW2APIJSON = await client.GetStringAsync("https://api.guildwars2.com/v1/item_details.json?item_id=" + id);
+                GW2APIJSON = await client.GetStringAsync("https://api.guildwars2.com/v1/item_details.json?item_id=" + id);
 
                 //Serialize the JSON response into a GW2Item object
                 JavaScriptSerializer jss = new JavaScriptSerializer();
@@ -67,6 +70,13 @@ namespace GW2OIC.GW2APIJSONDomain
             this.restrictions = item.restrictions;
         }
 
+        public void PopulateItemTypeObject(string type)
+        {
+            //TODO
+            //Switch for item types
+            //e.g. if switch case == weapon then this.item.WeaponInfo = jss.Deserialize<WeaponInfo>(GW2APIJSON) or possibly a substring of it.
+        }
+
         /// <summary>
         /// Used internally to hold values to be placed into the GW2Item properties.
         /// </summary>
@@ -86,6 +96,20 @@ namespace GW2OIC.GW2APIJSONDomain
             public string[] flags { get; set; }
             public string[] restrictions { get; set; }
         }
+
+        private class WeaponInfo
+        {
+            string type { get; set; }
+            string damage_type { get; set; }
+            int min_power { get; set; }
+            int max_power { get; set; }
+
+        }
+
+        //Need to create a subset of private classes for each type of "Item_type" property in the API.
+        //Add a set of properties to the main GW2Item class for each of these private classes.
+        //In the CreateItem function have a switch on item type and populate the new item from the
+        //Class level GW2APIJSON string variable (should work).
 
     }
 
