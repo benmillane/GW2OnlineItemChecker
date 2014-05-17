@@ -12,7 +12,8 @@ namespace GW2OIC.GW2APIJSONDomain
 
     /// <summary>
     /// Represents a GW2 Item as obtained via the official online JSON API.
-    /// An item cannot be populated with fake details due to how it is constructed.
+    /// An item cannot be populated with fake details due to private setters.
+    /// A GW2Item is constructed only through the CreateItem(int id) function.
     /// IItemTypeInfo objects can currently be populated with fake details but cannot
     /// be set to a property on an instance of a real object.
     /// </summary>
@@ -46,7 +47,7 @@ namespace GW2OIC.GW2APIJSONDomain
         /// <summary>
         /// Obtains JSON from the GW2 API and deserializes it into a GW2ItemPrivate Object for CreateItem to use
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">The id of the item as per the official GW2 api</param>
         /// <returns></returns>
         async private Task GetItem(int id)
         {
@@ -61,7 +62,11 @@ namespace GW2OIC.GW2APIJSONDomain
 
         }
 
-        //Calls GetItem to access API and then replicates the values into this object's properties.
+        /// <summary>
+        /// Calls GetItem to access API and then replicates the values into this object's properties.
+        /// </summary>
+        /// <param name="id">The id of the item as per the official GW2 api</param>
+        /// <returns></returns>
         async public Task CreateItem(int id)
         {
             await this.GetItem(id);
@@ -103,6 +108,10 @@ namespace GW2OIC.GW2APIJSONDomain
             public WeaponTypeInfo weapon { get; set; }
         }
 
+        /// <summary>
+        /// Any GW2Item with a type of weapon will have a object property called weapon.
+        /// This object has a unique set of properties which giove additional information about the weapon.
+        /// </summary>
         public class WeaponTypeInfo : IItemTypeInfo
         {
             public string type { get; set; }
@@ -121,7 +130,7 @@ namespace GW2OIC.GW2APIJSONDomain
 
         /// <summary>
         /// All items from the API have a specific ItemType object as their final property.
-        /// Each one has a property called type which is a string.
+        /// Each ItemType object has a property called type which is a string.
         /// </summary>
         public interface IItemTypeInfo
         {
