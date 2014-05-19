@@ -42,8 +42,17 @@ namespace GW2OIC.GW2APIJSONDomain
         public string[] game_types { get; private set; }
         public string[] flags { get; private set; }
         public string[] restrictions { get; private set; }
+        public ArmourTypeInfo armour { get; private set; }
+        public BackTypeInfo back { get; private set; }
+        public BagTypeInfo bag { get; private set; }
+        public ConsumableTypeInfo consumable { get; private set; }
+        public ContainerTypeInfo container { get; private set; }
+        public GatheringTypeInfo  gathering { get; private set; }
+        public GizmoTypeInfo gizmo { get; private set; }
+        public ToolTypeInfo tool { get; private set; }
+        public TrinketTypeInfo trinket { get; private set; }
+        public UpgradeComponentTypeInfo upgradecomponent { get; private set; }
         public WeaponTypeInfo weapon { get; private set; }
-        //TODO Add in additional itemtype properties
 
         /// <summary>
         /// Obtains JSON from the GW2 API and deserializes it into a GW2ItemPrivate Object for CreateItem to use
@@ -85,8 +94,17 @@ namespace GW2OIC.GW2APIJSONDomain
             this.game_types = item.game_types;
             this.flags = item.flags;
             this.restrictions = item.restrictions;
+            this.armour = item.armour;
+            this.back = item.back;
+            this.bag = item.bag;
+            this.consumable = item.consumable;
+            this.container = item.container;
+            this.gathering = item.gathering;
+            this.gizmo = item.gizmo;
+            this.tool = item.tool;
+            this.trinket = item.trinket;
+            this.upgradecomponent = item.upgradecomponent;
             this.weapon = item.weapon;
-            //TODO Add in additional itemtype properties
         }
 
         /// <summary>
@@ -107,24 +125,17 @@ namespace GW2OIC.GW2APIJSONDomain
             public string[] game_types { get; set; }
             public string[] flags { get; set; }
             public string[] restrictions { get; set; }
-            public WeaponTypeInfo weapon { get; set; }
-            //TODO Add in additional itemtype properties
-        }
-
-        /// <summary>
-        /// Any GW2Item with a type of weapon will have a object property called weapon.
-        /// This object has a unique set of properties which give additional information about the weapon.
-        /// </summary>
-        public class WeaponTypeInfo : IItemTypeInfo
-        {
-            public string type { get; set; }
-            public string damage_type { get; set; }
-            public int min_power { get; set; }
-            public int max_power { get; set; }
-            public int defence { get; set; }
-            public flagArray[] infusion_slots { get; set; }
-            public int? suffix_item_id { get; set; }
-
+            public ArmourTypeInfo armour { get; private set; }
+            public BackTypeInfo back { get; private set; }
+            public BagTypeInfo bag { get; private set; }
+            public ConsumableTypeInfo consumable { get; private set; }
+            public ContainerTypeInfo container { get; private set; }
+            public GatheringTypeInfo gathering { get; private set; }
+            public GizmoTypeInfo gizmo { get; private set; }
+            public ToolTypeInfo tool { get; private set; }
+            public TrinketTypeInfo trinket { get; private set; }
+            public UpgradeComponentTypeInfo upgradecomponent { get; private set; }
+            public WeaponTypeInfo weapon { get; private set; }
         }
 
         /// <summary>
@@ -161,7 +172,7 @@ namespace GW2OIC.GW2APIJSONDomain
         /// This object has a unique set of properties which give additional information about the bag.
         /// bag is different to most other Item properties in that it doesn't have a property of "type"
         /// </summary>
-        public class Bag
+        public class BagTypeInfo
         {
             public int no_sell_or_sort { get; set; }
             public int size { get; set; }
@@ -193,7 +204,7 @@ namespace GW2OIC.GW2APIJSONDomain
         ///Consumable types "Unlock" with "unlock_type"="Dye" have the property:
         ///color_id (integer): ID of the color that will be unlocked after using the consumable
         /// </summary>
-        public class Consumable
+        public class ConsumableTypeInfo : IItemTypeInfo
         {
             public string type { get; set; }
             public int? duration_ms { get; set; }
@@ -204,7 +215,81 @@ namespace GW2OIC.GW2APIJSONDomain
         }
 
         /// <summary>
-        /// Used by 'back' type items, different to other properties of the same name for the other items.
+        /// Any GW2Item with a type of Container will have a object property called Container.
+        /// This object has a unique set of properties which give additional information about the Container.
+        /// </summary>
+        public class ContainerTypeInfo : IItemTypeInfo
+        {
+            public string type { get; set; }
+        }
+
+        /// <summary>
+        /// Any GW2Item with a type of Gathering will have a object property called Gathering.
+        /// This object has a unique set of properties which give additional information about the Gathering.
+        /// </summary>
+        public class GatheringTypeInfo : IItemTypeInfo
+        {
+            public string type { get; set; }
+        }
+
+        /// <summary>
+        /// Any GW2Item with a type of Gizmo will have a object property called Gizmo.
+        /// This object has a unique set of properties which give additional information about the Gizmo.
+        /// </summary>
+        public class GizmoTypeInfo : IItemTypeInfo
+        {
+            public string type { get; set; }
+        }
+
+        /// <summary>
+        /// Any GW2Item with a type of Tool will have a object property called Tool.
+        /// This object has a unique set of properties which give additional information about the Tool.
+        /// </summary>
+        public class ToolTypeInfo : IItemTypeInfo
+        {
+            public string type { get; set; }
+            public int charges { get; set; }
+        }
+
+        /// <summary>
+        /// Any GW2Item with a type of Trinket will have a object property called Trinket.
+        /// This object has a unique set of properties which give additional information about the Trinket.
+        /// </summary>
+        public class TrinketTypeInfo : IItemTypeInfo
+        {
+            public string type { get; set; }
+            public infusion_slot[] infusion_slots { get; set; }
+            public InfixUpgrade infix_upgrade { get; set; }
+            public int suffix_item_id { get; set; }
+            public int? secondary_suffix_item_id { get; set; }
+        }
+
+        public class UpgradeComponentTypeInfo : IItemTypeInfo
+        {
+            public string type { get; set; }
+            public string[] flags { get; set; }
+            public string[] infusion_upgrade_flags { get; set; }
+            public InfixUpgrade infix_upgrade { get; set; }
+            public string suffix { get; set; }
+        }
+
+        /// <summary>
+        /// Any GW2Item with a type of weapon will have a object property called weapon.
+        /// This object has a unique set of properties which give additional information about the weapon.
+        /// </summary>
+        public class WeaponTypeInfo : IItemTypeInfo
+        {
+            public string type { get; set; }
+            public string damage_type { get; set; }
+            public int min_power { get; set; }
+            public int max_power { get; set; }
+            public int defence { get; set; }
+            public flagArray[] infusion_slots { get; set; }
+            public int? suffix_item_id { get; set; }
+        }
+
+        /// <summary>
+        /// Used by some items, different to other properties of the same name for the other items.
         /// not an array of flags but instead an object in its own right.
         /// </summary>
         public class infusion_slot
