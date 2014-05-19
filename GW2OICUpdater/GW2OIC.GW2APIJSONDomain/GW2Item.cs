@@ -42,7 +42,7 @@ namespace GW2OIC.GW2APIJSONDomain
         public string[] game_types { get; private set; }
         public string[] flags { get; private set; }
         public string[] restrictions { get; private set; }
-        public ArmourTypeInfo armour { get; private set; }
+        public ArmourTypeInfo armor { get; private set; }
         public BackTypeInfo back { get; private set; }
         public BagTypeInfo bag { get; private set; }
         public ConsumableTypeInfo consumable { get; private set; }
@@ -51,7 +51,7 @@ namespace GW2OIC.GW2APIJSONDomain
         public GizmoTypeInfo gizmo { get; private set; }
         public ToolTypeInfo tool { get; private set; }
         public TrinketTypeInfo trinket { get; private set; }
-        public UpgradeComponentTypeInfo upgradecomponent { get; private set; }
+        public UpgradeComponentTypeInfo upgrade_component { get; private set; }
         public WeaponTypeInfo weapon { get; private set; }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace GW2OIC.GW2APIJSONDomain
             this.game_types = item.game_types;
             this.flags = item.flags;
             this.restrictions = item.restrictions;
-            this.armour = item.armour;
+            this.armor = item.armor;
             this.back = item.back;
             this.bag = item.bag;
             this.consumable = item.consumable;
@@ -103,7 +103,7 @@ namespace GW2OIC.GW2APIJSONDomain
             this.gizmo = item.gizmo;
             this.tool = item.tool;
             this.trinket = item.trinket;
-            this.upgradecomponent = item.upgradecomponent;
+            this.upgrade_component = item.upgrade_component;
             this.weapon = item.weapon;
         }
 
@@ -125,17 +125,17 @@ namespace GW2OIC.GW2APIJSONDomain
             public string[] game_types { get; set; }
             public string[] flags { get; set; }
             public string[] restrictions { get; set; }
-            public ArmourTypeInfo armour { get; private set; }
-            public BackTypeInfo back { get; private set; }
-            public BagTypeInfo bag { get; private set; }
-            public ConsumableTypeInfo consumable { get; private set; }
-            public ContainerTypeInfo container { get; private set; }
-            public GatheringTypeInfo gathering { get; private set; }
-            public GizmoTypeInfo gizmo { get; private set; }
-            public ToolTypeInfo tool { get; private set; }
-            public TrinketTypeInfo trinket { get; private set; }
-            public UpgradeComponentTypeInfo upgradecomponent { get; private set; }
-            public WeaponTypeInfo weapon { get; private set; }
+            public ArmourTypeInfo armor { get; set; }
+            public BackTypeInfo back { get; set; }
+            public BagTypeInfo bag { get; set; }
+            public ConsumableTypeInfo consumable { get; set; }
+            public ContainerTypeInfo container { get; set; }
+            public GatheringTypeInfo gathering { get; set; }
+            public GizmoTypeInfo gizmo { get; set; }
+            public ToolTypeInfo tool { get; set; }
+            public TrinketTypeInfo trinket { get; set; }
+            public UpgradeComponentTypeInfo upgrade_component { get; set; }
+            public WeaponTypeInfo weapon { get; set; }
         }
 
         /// <summary>
@@ -144,7 +144,6 @@ namespace GW2OIC.GW2APIJSONDomain
         /// </summary>
         public class ArmourTypeInfo : IItemTypeInfo
         {
-
             public string type { get; set; }
             public string weight_class { get; set; }
             public int defence { get; set; }
@@ -208,7 +207,7 @@ namespace GW2OIC.GW2APIJSONDomain
         {
             public string type { get; set; }
             public int? duration_ms { get; set; }
-            public string descrition { get; set; }
+            public string description { get; set; }
             public string unlock_type { get; set; }
             public int? recipe_id { get; set; }
             public int? color_id { get; set; }
