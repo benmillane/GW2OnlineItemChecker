@@ -43,6 +43,7 @@ namespace GW2OIC.GW2APIJSONDomain
         public string[] flags { get; private set; }
         public string[] restrictions { get; private set; }
         public WeaponTypeInfo weapon { get; private set; }
+        //TODO Add in additional itemtype properties
 
         /// <summary>
         /// Obtains JSON from the GW2 API and deserializes it into a GW2ItemPrivate Object for CreateItem to use
@@ -85,6 +86,7 @@ namespace GW2OIC.GW2APIJSONDomain
             this.flags = item.flags;
             this.restrictions = item.restrictions;
             this.weapon = item.weapon;
+            //TODO Add in additional itemtype properties
         }
 
         /// <summary>
@@ -106,11 +108,12 @@ namespace GW2OIC.GW2APIJSONDomain
             public string[] flags { get; set; }
             public string[] restrictions { get; set; }
             public WeaponTypeInfo weapon { get; set; }
+            //TODO Add in additional itemtype properties
         }
 
         /// <summary>
         /// Any GW2Item with a type of weapon will have a object property called weapon.
-        /// This object has a unique set of properties which giove additional information about the weapon.
+        /// This object has a unique set of properties which give additional information about the weapon.
         /// </summary>
         public class WeaponTypeInfo : IItemTypeInfo
         {
@@ -122,15 +125,132 @@ namespace GW2OIC.GW2APIJSONDomain
             public flagArray[] infusion_slots { get; set; }
             public int? suffix_item_id { get; set; }
 
-            public class flagArray
-            {
-                public string[] flags { get; set; }
-            }
+        }
+
+        /// <summary>
+        /// Any GW2Item with a type of armour will have a object property called armour.
+        /// This object has a unique set of properties which give additional information about the armour.
+        /// </summary>
+        public class ArmourTypeInfo : IItemTypeInfo
+        {
+
+            public string type { get; set; }
+            public string weight_class { get; set; }
+            public int defence { get; set; }
+            public flagArray[] infusion_slots { get; set; }
+            public InfixUpgrade infix_upgrade { get; set; }
+            public int suffix_item_id { get; set; }
+            public int? secondary_suffix_item_id { get; set; }
+        }
+
+        /// <summary>
+        /// Any GW2Item with a type of back will have a object property called back.
+        /// This object has a unique set of properties which give additional information about the back.
+        /// back is different to most other Item properties in that it doesn't have a property of "type"
+        /// </summary>
+        public class BackTypeInfo
+        {
+            public infusion_slot[] infusion_slots { get; set; }
+            public InfixUpgrade infix_upgrade { get; set; }
+            public int suffix_item_id { get; set; }
+            public int? secondary_suffix_item_id { get; set; }
+        }
+
+        /// <summary>
+        /// Any GW2Item with a type of bag will have a object property called bag.
+        /// This object has a unique set of properties which give additional information about the bag.
+        /// bag is different to most other Item properties in that it doesn't have a property of "type"
+        /// </summary>
+        public class Bag
+        {
+            public int no_sell_or_sort { get; set; }
+            public int size { get; set; }
+        }
+
+        /// <summary>
+        /// Any GW2Item with a type of bag will have a object property called bag.
+        /// This object has a unique set of properties which give additional information about the bag.
+        /// bag is different to most other Item properties in that it has different states of property
+        /// population based on its type. As taken from the API documentation the rules are:
+         
+        /// Consumable types "Generic","Food" and "Utility" may have the following properties:
+        ///duration_ms (integer): effect duration in milliseconds
+        ///description (string): effect descriptions
+
+        ///Consumable types "Unlock" have the property:
+        ///unlock_type (string): type of unlock
+        ///Possible values:
+        ///"BagSlot"
+        ///"BankTab"
+        ///"CollectibleCapacity"
+        ///"Content"
+        ///"CraftingRecipe"
+        ///"Dye"
+
+        ///Consumable types "Unlock" with "unlock_type"="CraftingRecipe" have the property:
+        ///recipe_id (integer): ID of the recipe that will be unlocked after using the consumable
+
+        ///Consumable types "Unlock" with "unlock_type"="Dye" have the property:
+        ///color_id (integer): ID of the color that will be unlocked after using the consumable
+        /// </summary>
+        public class Consumable
+        {
+            public string type { get; set; }
+            public int? duration_ms { get; set; }
+            public string descrition { get; set; }
+            public string unlock_type { get; set; }
+            public int? recipe_id { get; set; }
+            public int? color_id { get; set; }
+        }
+
+        /// <summary>
+        /// Used by 'back' type items, different to other properties of the same name for the other items.
+        /// not an array of flags but instead an object in its own right.
+        /// </summary>
+        public class infusion_slot
+        {
+            public int item_id { get; set; }
+            public string[] flags { get; set; }
+        }
+
+        /// <summary>
+        /// Used by a number of IItemTypeInfo implementing classes
+        /// </summary>
+        public class Buff
+        {
+            public int skill_id { get; set; }
+            public string description { get; set; }
+        }
+
+        /// <summary>
+        /// Used by a number of IItemTypeInfo implementing classes
+        /// </summary>
+        public class Attribute
+        {
+            public string attribute { get; set; }
+            public int modifier { get; set; }
+        }
+
+        /// <summary>
+        /// Used by a number of IItemTypeInfo implementing classes
+        /// </summary>
+        public class InfixUpgrade
+        {
+            public Buff buff { get; set; }
+            public Attribute[] attributes { get; set; }
+        }
+
+        /// <summary>
+        /// A number of IItemTypeInfo implementing classes have a property type which is an array of flags
+        /// </summary>
+        public class flagArray
+        {
+            public string[] flags { get; set; }
         }
 
         /// <summary>
         /// All items from the API have a specific ItemType object as their final property.
-        /// Each ItemType object has a property called type which is a string.
+        /// Many item types have a value of type (but not all).
         /// </summary>
         public interface IItemTypeInfo
         {
