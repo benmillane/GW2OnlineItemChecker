@@ -42,7 +42,7 @@ namespace GW2OIC.GW2APIJSONDomain
         public string[] game_types { get; private set; }
         public string[] flags { get; private set; }
         public string[] restrictions { get; private set; }
-        public ArmourTypeInfo armor { get; private set; }
+        public ArmorTypeInfo armor { get; private set; }
         public BackTypeInfo back { get; private set; }
         public BagTypeInfo bag { get; private set; }
         public ConsumableTypeInfo consumable { get; private set; }
@@ -125,7 +125,7 @@ namespace GW2OIC.GW2APIJSONDomain
             public string[] game_types { get; set; }
             public string[] flags { get; set; }
             public string[] restrictions { get; set; }
-            public ArmourTypeInfo armor { get; set; }
+            public ArmorTypeInfo armor { get; set; }
             public BackTypeInfo back { get; set; }
             public BagTypeInfo bag { get; set; }
             public ConsumableTypeInfo consumable { get; set; }
@@ -142,7 +142,7 @@ namespace GW2OIC.GW2APIJSONDomain
         /// Any GW2Item with a type of armour will have a object property called armour.
         /// This object has a unique set of properties which give additional information about the armour.
         /// </summary>
-        public class ArmourTypeInfo : IItemTypeInfo
+        public class ArmorTypeInfo : IItemTypeInfo
         {
             public string type { get; set; }
             public string weight_class { get; set; }

@@ -48,8 +48,6 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
     public class BackInfixUpgrade
     {
         public int BackInfixUpgradeID { get; set; } //PK
-        public BackBuff buff { get; set; }
-        public BackAttribute[] attributes { get; set; }
 
         //FK
         public int EFBackTypeInfoID { get; set; }

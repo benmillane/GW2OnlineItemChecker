@@ -23,21 +23,8 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
         public string[] flags { get; set; }
         public string[] restrictions { get; set; }
 
-        ////FK's
-        //public int? EFArmourTypeInfoID { get; set; }
-        //public int? EFBackTypeInfoID { get; set; }
-        //public int? EFBagTypeInfoID { get; set; }
-        //public int? EFConsumableTypeInfoID { get; set; }
-        //public int? EFContainerTypeInfoID { get; set; }
-        //public int? EFGatheringTypeInfoID { get; set; }
-        //public int? EFGizmoTypeInfoID { get; set; }
-        //public int? EFToolTypeInfoID { get; set; }
-        //public int? EFTrinketTypeInfoID { get; set; }
-        //public int? EFUpgradeComponentTypeInfoID { get; set; }
-        //public int? EFWeaponTypeInfoID { get; set; }
-
         //Navigation Properties
-        public virtual EFArmourTypeInfo armor { get; set; }
+        public virtual EFArmorTypeInfo armor { get; set; }
         public virtual EFBackTypeInfo back { get; set; }
         public virtual EFBagTypeInfo bag { get; set; }
         public virtual EFConsumableTypeInfo consumable { get; set; }

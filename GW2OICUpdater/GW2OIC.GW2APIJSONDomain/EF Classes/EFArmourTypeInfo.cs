@@ -6,38 +6,83 @@ using System.Threading.Tasks;
 
 namespace GW2OIC.GW2APIJSONDomain.EF_Classes
 {
-    public class EFArmourTypeInfo
+    public class EFArmorTypeInfo
     {
+        public int EFArmorTypeInfoID { get; set; } //PK
         public string type { get; set; }
         public string weight_class { get; set; }
         public int defence { get; set; }
-        public ArmourFlagArray[] infusion_slots { get; set; }
-        public ArmourInfixUpgrade infix_upgrade { get; set; }
+
         public int suffix_item_id { get; set; }
         public int? secondary_suffix_item_id { get; set; }
+
+        //FK
+        public int EFGW2ItemID { get; set; }
+
+        //Navigation Properties
+        public virtual EFGW2Item EFGW2Item { get; set; }
+        public virtual ArmorFlagArray[] infusion_slots { get; set; }
+        public virtual ArmorInfixUpgrade infix_upgrade { get; set; }
     }
 
-    public class ArmourBuff
+    public class ArmorInfixUpgrade
     {
+        public int ArmorInfixUpgradeID { get; set; } //PK
+
+        //FK
+        public int EFArmorTypeInfoID { get; set; }
+
+        //Navigation Properties
+        public virtual ArmorBuff buff { get; set; }
+        public virtual List<ArmorAttribute> attributes { get; set; }
+    }
+
+    public class ArmorBuff
+    {
+        public int ArmorBuffID { get; set; } //PK
         public int skill_id { get; set; }
         public string description { get; set; }
+
+        //FK
+        public int ArmorInfixUpgradeID { get; set; }
+
+        //Navigation Properties
+        public ArmorInfixUpgrade ArmorInfixUpgrade { get; set; }
     }
 
-    public class ArmourAttribute
+    public class ArmorAttribute
     {
         public string attribute { get; set; }
         public int modifier { get; set; }
+
+        //FK
+        public int ArmorInfixUpgradeID { get; set; }
+
+        //Navigation Properties
+        public ArmorInfixUpgrade ArmorInfixUpgrade { get; set; }
     }
 
-    public class ArmourInfixUpgrade
+    public class ArmorFlagArray
     {
-        public ArmourBuff buff { get; set; }
-        public ArmourAttribute[] attributes { get; set; }
+        public int ArmorFlagArrayID { get; set; } //PK
+
+        //FK
+        public int EFArmorTypeInfoID { get; set; }
+
+        //Navigation Properties
+        public virtual List<string> flags { get; set; }
     }
 
-    public class ArmourFlagArray
+    public class ArmorFlagArrayString
     {
-        public string[] flags { get; set; }
+        public int ArmorFlagArrayStringID { get; set; } //PK
+
+        //FK
+        public int ArmorFlagArrayID { get; set; }
+
+        //Navigation Properties
+        public virtual ArmorFlagArray ArmorFlagArray { get; set; }
+
     }
 
 }

@@ -8,6 +8,7 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
 {
     public class EFGizmoTypeInfo
     {
+        public int EFGizmoTypeInfoID { get; set; } //PK
         public string type { get; set; }
 
         //FK

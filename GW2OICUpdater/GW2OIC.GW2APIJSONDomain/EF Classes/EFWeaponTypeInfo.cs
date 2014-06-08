@@ -27,7 +27,24 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
 
     public class WeaponFlagArray
     {
+        public int WeaponFlagArrayID { get; set; } //PK
+
+        //FK
+        public int EFWeaponTypeInfoID { get; set; }
+
+        //Navigation Properties
+        public virtual List<WeaponFlagArrayString> flags { get; set; }
+        public virtual EFWeaponTypeInfo EFWeaponTypeInfo { get; set; }
+    }
+
+    public class WeaponFlagArrayString
+    {
+        public int WeaponFlagArrayStringID { get; set; } //PK
+
+        //FK
         public int WeaponFlagArrayID { get; set; }
-        public string[] flags { get; set; }
-    } 
+
+        //Navigation Properties
+        public WeaponFlagArray WeaponFlagArray { get; set; }
+    }
 }
