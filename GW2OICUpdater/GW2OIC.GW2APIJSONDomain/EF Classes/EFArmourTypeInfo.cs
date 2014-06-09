@@ -52,6 +52,7 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
 
     public class ArmorAttribute
     {
+        public int ArmorAttributeID { get; set; } //PK
         public string attribute { get; set; }
         public int modifier { get; set; }
 

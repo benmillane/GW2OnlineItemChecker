@@ -8,6 +8,7 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
 {
     public class EFToolTypeInfo
     {
+        public int EFToolTypeInfoID { get; set; }
         public string type { get; set; }
         public int charges { get; set; }
 

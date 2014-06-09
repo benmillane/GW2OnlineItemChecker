@@ -8,7 +8,7 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
 {
     public class EFWeaponTypeInfo
     {
-        public int EFWeaponTypeInfoID { get; set; }
+        public int EFWeaponTypeInfoID { get; set; } //PK
         public string type { get; set; }
         public string damage_type { get; set; }
         public int min_power { get; set; }

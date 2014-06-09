@@ -8,6 +8,7 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
 {
     public class EFConsumableTypeInfo
     {
+        public int EFConsumableTypeInfoID { get; set; } //PK
         public string type { get; set; }
         public int? duration_ms { get; set; }
         public string description { get; set; }

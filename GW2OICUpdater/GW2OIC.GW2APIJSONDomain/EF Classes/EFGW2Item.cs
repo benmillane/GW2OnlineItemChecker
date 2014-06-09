@@ -8,7 +8,7 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
 {
     public class EFGW2Item
     {
-        public int EFGW2ItemID { get; set; }
+        public int EFGW2ItemID { get; set; } //PK
         public int item_id { get; set; }
         public string name { get; set; }
         public string description { get; set; }

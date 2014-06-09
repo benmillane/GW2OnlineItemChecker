@@ -25,7 +25,7 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
 
     public class UpgradeComponentInfixUpgrade
     {
-        public int UpgradeComponentInfixUpgradeID { get; set; }
+        public int UpgradeComponentInfixUpgradeID { get; set; } //PK
 
         //FK
         public int EFUpgradeComponentTypeInfoID { get; set; }
@@ -37,7 +37,7 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
 
     public class UpgradeComponentBuff
     {
-        public int UpgradeComponentBuffID { get; set; }
+        public int UpgradeComponentBuffID { get; set; } //PK
         public int skill_id { get; set; }
         public string description { get; set; }
 
@@ -51,7 +51,7 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
 
     public class UpgradeComponentAttribute
     {
-        public int UpgradeComponentAttributeID { get; set; }
+        public int UpgradeComponentAttributeID { get; set; } //PK
         public string attribute { get; set; }
         public int modifier { get; set; }
 
