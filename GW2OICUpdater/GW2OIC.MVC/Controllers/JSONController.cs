@@ -19,5 +19,12 @@ namespace GW2OIC.MVC.Controllers
             GW2Item item = await obtain.GetItem(id);
             return Json(item, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult GetAllItemsTest()
+        {
+            GW2AllItemsObtainer obtainer = new GW2AllItemsObtainer();
+            obtainer.GetAllGW2Items();
+            return Json("Success");
+        }
 	}
 }

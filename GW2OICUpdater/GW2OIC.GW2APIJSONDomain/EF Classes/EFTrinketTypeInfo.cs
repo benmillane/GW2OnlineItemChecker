@@ -8,7 +8,7 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
 {
     public class EFTrinketTypeInfo
     {
-        public int EFTrinketTypeInfo { get; set; } //PK
+        public int EFTrinketTypeInfoID { get; set; } //PK
         public string type { get; set; }
         public TrinketInfusion_slot[] infusion_slots { get; set; }
         public TrinketInfixUpgrade infix_upgrade { get; set; }

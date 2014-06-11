@@ -16,9 +16,17 @@
             $("#icon_file_id").html("<br />" + data.icon_file_id);
             $("#icon_file_signature").html("<br />" + data.icon_file_signature);
             $("#default_skin").html("<br />" + data.default_skin);
+
+        });
+    });
+
+    $("#GetAllItems").on('click', function(){
+
+        $.get("../JSON/GetAllItemsTest").success(function(data){
+            alert(data);
+
         });
 
     });
 
 });
-

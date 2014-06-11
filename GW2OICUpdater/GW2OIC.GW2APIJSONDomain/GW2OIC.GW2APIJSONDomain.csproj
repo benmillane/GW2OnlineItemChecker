@@ -68,6 +68,7 @@
     <Compile Include="EF Classes\EFTrinketTypeInfo.cs" />
     <Compile Include="EF Classes\EFUpgradeComponentInfo.cs" />
     <Compile Include="EF Classes\EFWeaponTypeInfo.cs" />
+    <Compile Include="GW2AllItemsObtainer.cs" />
     <Compile Include="GW2Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
