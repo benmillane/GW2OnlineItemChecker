@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GW2OIC.GW2APIJSONDomain.EF_Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -10,7 +11,7 @@ namespace GW2OIC.GW2APIJSONDomain
 {
     public class GW2AllItemsObtainer
     {
-        public List<string> GetAllGW2Items()
+        public static List<string> GetAllGW2Items()
         {
             List<string> allItems = new List<string>();
 
@@ -33,6 +34,25 @@ namespace GW2OIC.GW2APIJSONDomain
 
             return allItems;
         }
+
+        public static void PopulateDatabase()
+        {
+            List<string> allItems = new List<string>();
+            allItems = GetAllGW2Items();
+
+            for(int i = 0; i < 100; i++)
+            {
+                //TODO
+            }
+
+        }
+
+        public static EFGW2Item ConvertAPIItemToEFItem(GW2Item apiItem)
+        {
+            //TODO
+            throw new NotImplementedException();
+        }
+
     }
 }
 
