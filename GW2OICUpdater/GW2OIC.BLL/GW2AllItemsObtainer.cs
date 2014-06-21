@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
+using System.Data.Entity;
 
 namespace GW2OIC.GW2APIJSONDomain
 {
@@ -35,22 +36,76 @@ namespace GW2OIC.GW2APIJSONDomain
             return allItems;
         }
 
-        public static void PopulateDatabase()
+        async public static void PopulateDatabase()
         {
             List<string> allItems = new List<string>();
             allItems = GetAllGW2Items();
 
             for(int i = 0; i < 100; i++)
             {
-                //TODO
+                GW2Item item = new GW2Item();
+                int itemID;
+                if (!Int32.TryParse(allItems.ElementAt(i), out itemID))
+                {
+                    continue;
+                }
+                await item.CreateItem(itemID);
+                ConvertAPIItemToEFItem(item);
             }
 
         }
 
-        public static EFGW2Item ConvertAPIItemToEFItem(GW2Item apiItem)
+        public EFGW2Item ConvertAPIItemToEFItem(GW2Item apiItem)
         {
-            //TODO
-            throw new NotImplementedException();
+            EFGW2Item efItem = new EFGW2Item();
+
+            if (!PopulateStandardProperties(apiItem, efItem))
+            {
+                throw new InvalidOperationException("Unable to convert apiItem to database item");
+            }
+            
+
+        }
+
+        /// <summary>
+        /// Create base item for database
+        /// </summary>
+        /// <param name="apiItem"></param>
+        /// <param name="efItem"></param>
+        /// <returns></returns>
+        private bool PopulateStandardProperties(GW2Item apiItem, EFGW2Item efItem)
+        {
+            try
+            {
+                using (var context = new EFGW2Context())
+                {
+                    //Standard properties
+                    efItem.item_id = apiItem.item_id;
+                    efItem.name = apiItem.name;
+                    efItem.description = apiItem.description;
+                    efItem.type = apiItem.type;
+                    efItem.level = apiItem.level;
+                    efItem.rarity = apiItem.rarity;
+                    efItem.vendor_value = apiItem.vendor_value;
+                    efItem.icon_file_id = apiItem.icon_file_id;
+                    efItem.icon_file_signature = apiItem.icon_file_signature;
+                    efItem.default_skin = apiItem.default_skin;
+
+                    context.GW2Items.Add(efItem);
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+
+        private bool PopulateArrayProperties(GW2Item apiItem, EFGW2Item efItem)
+        {
+
         }
 
     }

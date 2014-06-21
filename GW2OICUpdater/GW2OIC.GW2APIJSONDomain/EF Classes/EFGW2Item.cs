@@ -19,11 +19,11 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
         public int icon_file_id { get; set; }
         public string icon_file_signature { get; set; }
         public int default_skin { get; set; }
-        public string[] game_types { get; set; }
-        public string[] flags { get; set; }
-        public string[] restrictions { get; set; }
 
         //Navigation Properties
+        public virtual List<EFGame_Type> game_types { get; set; }
+        public virtual List<EFFlag> flags { get; set; }
+        public virtual List<EFRestriction> restrictions { get; set; }
         public virtual EFArmorTypeInfo armor { get; set; }
         public virtual EFBackTypeInfo back { get; set; }
         public virtual EFBagTypeInfo bag { get; set; }
@@ -35,5 +35,41 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
         public virtual EFTrinketTypeInfo trinket { get; set; }
         public virtual EFUpgradeComponentTypeInfo upgrade_component { get; set; }
         public virtual EFWeaponTypeInfo weapon { get; set; }
+    }
+
+    public class EFGame_Type
+    {
+        public int EFGame_TypeID { get; set; } //PK
+        public string gameType { get; set; }
+
+        //FK
+        public int EFGW2ItemID { get; set; }
+
+        //Navigation Properties
+        public EFGW2Item EFGW2Item { get; set; }
+    }
+
+    public class EFFlag
+    {
+        public int EFFlagsID { get; set; } //PK
+        public string flag { get; set; }
+
+        //FK
+        public int EFGW2ItemID { get; set; }
+
+        //Navigation Properties
+        public EFGW2Item EFGW2Item { get; set; }
+    }
+
+    public class EFRestriction
+    {
+        public int EFRestrictionsID { get; set; } //PK
+        public string restriction { get; set; } 
+
+        //FK
+        public int EFGW2ItemID { get; set; }
+
+        //Navigation Properties
+        public EFGW2Item EFGW2Item { get; set; }
     }
 }

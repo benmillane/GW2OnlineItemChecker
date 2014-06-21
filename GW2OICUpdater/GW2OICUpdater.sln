@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
+# Visual Studio Express 2013 for Web
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GW2OIC.GW2APIJSONDomain", "GW2OIC.GW2APIJSONDomain\GW2OIC.GW2APIJSONDomain.csproj", "{AE21BE05-3D6B-4340-9156-75E2B3699838}"
@@ -8,6 +8,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GW2OIC.MVC", "GW2OIC.MVC\GW2OIC.MVC.csproj", "{88AE75E1-245B-428A-90D8-87161D43B121}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GW2OIC.BLL", "GW2OIC.BLL\GW2OIC.BLL.csproj", "{2ED734B9-797A-47B6-B9F3-BB778812C3EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GW2OIC.Tests", "GW2OIC.Tests\GW2OIC.Tests.csproj", "{AAB354E7-3841-4BFE-B243-93742D04E704}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{2ED734B9-797A-47B6-B9F3-BB778812C3EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ED734B9-797A-47B6-B9F3-BB778812C3EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ED734B9-797A-47B6-B9F3-BB778812C3EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAB354E7-3841-4BFE-B243-93742D04E704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAB354E7-3841-4BFE-B243-93742D04E704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAB354E7-3841-4BFE-B243-93742D04E704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAB354E7-3841-4BFE-B243-93742D04E704}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
