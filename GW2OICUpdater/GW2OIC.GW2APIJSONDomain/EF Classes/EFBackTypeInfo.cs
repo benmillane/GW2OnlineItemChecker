@@ -37,7 +37,7 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
         public int EFBackTypeInfoID { get; set; }
 
         //Navigation Properties
-        public virtual List<string> flags { get; set; }
+        public virtual List<BackFlag> flags { get; set; }
         public virtual EFBackTypeInfo EFBackTypeInfo { get; set; }
 
     }
@@ -89,7 +89,18 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
 
         //Navigation Properties
         public virtual BackInfixUpgrade BackInfixUpgrade { get; set; }
+    }
 
+    public class BackFlag
+    {
+        public int BackFlagID { get; set; } //PK
+        public string flag { get; set; }
+
+        //FK
+        public int BackInfusion_SlotID { get; set; }
+
+        //Navigation Properties
+        public virtual BackInfusion_Slot BackInfusion_Slot { get; set; }
     }
 
 }

@@ -21,18 +21,18 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
         public int default_skin { get; set; }
 
         //Navigation Properties
-        public virtual List<EFGame_Type> game_types { get; set; }
-        public virtual List<EFFlag> flags { get; set; }
-        public virtual List<EFRestriction> restrictions { get; set; }
-        public virtual EFArmorTypeInfo armor { get; set; }
-        public virtual EFBackTypeInfo back { get; set; }
-        public virtual EFBagTypeInfo bag { get; set; }
-        public virtual EFConsumableTypeInfo consumable { get; set; }
-        public virtual EFContainerTypeInfo container { get; set; }
-        public virtual EFGatheringTypeInfo gathering { get; set; }
-        public virtual EFGizmoTypeInfo gizmo { get; set; }
-        public virtual EFToolTypeInfo tool { get; set; }
-        public virtual EFTrinketTypeInfo trinket { get; set; }
+        public virtual List<EFGame_Type> game_types { get; set; } //
+        public virtual List<EFFlag> flags { get; set; } //
+        public virtual List<EFRestriction> restrictions { get; set; } //
+        public virtual EFArmorTypeInfo armor { get; set; } //
+        public virtual EFBackTypeInfo back { get; set; } //
+        public virtual EFBagTypeInfo bag { get; set; } //
+        public virtual EFConsumableTypeInfo consumable { get; set; } //
+        public virtual EFContainerTypeInfo container { get; set; } //
+        public virtual EFGatheringTypeInfo gathering { get; set; } //
+        public virtual EFGizmoTypeInfo gizmo { get; set; } //
+        public virtual EFToolTypeInfo tool { get; set; } //
+        public virtual EFTrinketTypeInfo trinket { get; set; } 
         public virtual EFUpgradeComponentTypeInfo upgrade_component { get; set; }
         public virtual EFWeaponTypeInfo weapon { get; set; }
     }

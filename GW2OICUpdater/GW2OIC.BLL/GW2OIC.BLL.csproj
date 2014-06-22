@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="GW2AllItemsObtainer.cs" />
     <Compile Include="GW2ObtainJSONItem.cs" />
+    <Compile Include="Mapping\APIToEFMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

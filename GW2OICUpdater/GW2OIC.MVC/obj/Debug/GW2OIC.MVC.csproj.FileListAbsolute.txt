@@ -28,3 +28,5 @@ C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.MVC\bin\GW2OIC.BLL.dll
 C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.MVC\bin\GW2OIC.GW2APIJSONDomain.dll
 C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.MVC\bin\GW2OIC.BLL.pdb
 C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.MVC\bin\GW2OIC.GW2APIJSONDomain.pdb
+C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.MVC\bin\EntityFramework.dll
+C:\Users\Ben\Desktop\GW2OIC\GW2OICUpdater\GW2OIC.MVC\bin\EntityFramework.xml

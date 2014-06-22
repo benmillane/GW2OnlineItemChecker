@@ -21,7 +21,7 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
 
         //Navigation Properties
         public virtual EFGW2Item EFGW2Item { get; set; }
-        public virtual ArmorFlagArray[] infusion_slots { get; set; }
+        public virtual List<ArmorFlagArray> infusion_slots { get; set; }
         public virtual ArmorInfixUpgrade infix_upgrade { get; set; }
     }
 
@@ -71,13 +71,14 @@ namespace GW2OIC.GW2APIJSONDomain.EF_Classes
         public int EFArmorTypeInfoID { get; set; }
 
         //Navigation Properties
-        public virtual List<string> flags { get; set; }
+        public virtual EFArmorTypeInfo EFArmorTypeInfo { get; set; }
     }
 
     public class ArmorFlagArrayString
     {
         public int ArmorFlagArrayStringID { get; set; } //PK
-
+        public string flag { get; set; }
+        
         //FK
         public int ArmorFlagArrayID { get; set; }
 
